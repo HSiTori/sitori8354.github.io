@@ -3,8 +3,10 @@ body{
 background-image:url("/images/apples.jpg");  
 background-repeat: repeat;
 font-family: 'Nova Round';font-size: 22px;
-opacity: 0.5; 
 }
 p{
 font-family: 'Nova Round';font-size: 22px;
+}
+.myDiv .bg{
+opacity: 0.5; 
 }
