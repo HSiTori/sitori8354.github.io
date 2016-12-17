@@ -11,6 +11,7 @@ font-family: 'Nova Round';font-size: 22px;
 }
 
 .myDiv .bg{
+  position:relative;
   background-image:url("/images/apples.jpg");  
   background-repeat: repeat;
   width:300px;
