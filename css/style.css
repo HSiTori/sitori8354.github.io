@@ -8,5 +8,7 @@ font-family: 'Nova Round';font-size: 22px;
 .myDiv .bg{
   background-image:url("/images/apples.jpg");  
   background-repeat: repeat;
+  width:300px;
+  height:250px;  
   opacity: 0.5; 
 }
