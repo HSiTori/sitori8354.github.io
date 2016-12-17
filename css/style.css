@@ -5,6 +5,11 @@ font-family: 'Nova Round';font-size: 22px;
 p{
 font-family: 'Nova Round';font-size: 22px;
 }
+.myDiv {
+ 
+  
+}
+
 .myDiv .bg{
   background-image:url("/images/apples.jpg");  
   background-repeat: repeat;
