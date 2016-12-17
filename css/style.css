@@ -1,12 +1,12 @@
 
 body{
-background-image:url("/images/apples.jpg");  
-background-repeat: repeat;
 font-family: 'Nova Round';font-size: 22px;
 }
 p{
 font-family: 'Nova Round';font-size: 22px;
 }
 .myDiv .bg{
-opacity: 0.5; 
+  background-image:url("/images/apples.jpg");  
+  background-repeat: repeat;
+  opacity: 0.5; 
 }
