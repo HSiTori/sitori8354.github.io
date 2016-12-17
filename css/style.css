@@ -2,3 +2,6 @@ body{
 background-image:"/images/apples.jpg";
 background-repeat: repeat-x; 
 }
+p {
+    font-family: "Times New Roman", Times, serif;
+}
