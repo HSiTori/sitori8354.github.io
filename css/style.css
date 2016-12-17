@@ -6,12 +6,12 @@ p{
 font-family: 'Nova Round';font-size: 22px;
 }
 .myDiv {
-    
+  position:relative;  
   
 }
 
 .myDiv .bg{
-  position:relative;
+  position:absolute;
   background-image:url("/images/apples.jpg");  
   background-repeat: repeat;
   width:300px;
