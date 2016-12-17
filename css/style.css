@@ -1,7 +1,7 @@
 
 body{
 background-image:url("/images/apples.jpg");  
-background-repeat: repeat-x;
+background-repeat: repeat;
 font-family: 'Nova Round';font-size: 22px;    
 }
 p{
