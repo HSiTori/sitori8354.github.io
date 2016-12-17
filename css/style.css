@@ -3,5 +3,5 @@ background-image:url("/images/apples.jpg");
 background-repeat: repeat-x; 
 }
 p {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Nova Round';font-size: 22px;
 }
