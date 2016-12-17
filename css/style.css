@@ -1,5 +1,5 @@
 body{
-background-image:"/images/apples.jpg";
+background-image:url("/images/apples.jpg");
 background-repeat: repeat-x; 
 }
 p {
