@@ -32,7 +32,7 @@ function deleteTask(){
 }
 $("body").on("click", ".js-delete-button", deleteTask);
                                  
-
+ 
 
 
 function updateTotalTaskNumber() {
