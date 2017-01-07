@@ -31,7 +31,6 @@ function deleteTask(){
   updateTotalTaskNumber();
 }
 $("body").on("click", ".js-delete-button", deleteTask);
-$("#delete-completed-button").on("click", removeCompletedTasks);
                                  
 
 
