@@ -31,10 +31,14 @@ function deleteTask(){
   console.log("004");
   $target.remove();
   console.log("005");
-  $("button#js-delete-button").on("click", deleteTask);  
+  $("button#js-delete-button").on("click", deletetask);  
   updateTotalTaskNumber();
 }
-                                 
+function deletetask(){
+var $target = $(this).closest("li");
+  $target.remove();
+  updateTotalTaskNumber();
+}                                 
  
 
 
