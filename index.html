@@ -66,9 +66,11 @@
     <button id="add-button" onclick="addTask();">加入</button>
     <div class="clear-float">
       <ul id="task-list" style="list-style: none">
-            <input type="checkbox">
+       <li class="delete">     
+       <input type="checkbox">
             <span class="js-content" >事項</span><button class="js-delete-button" onclick="deleteTask();">刪除</button>
-      </ul>
+     </li> 
+     </ul>
       共有<span id="total-task-number">0</span>個事項
     </div>
   </div>
