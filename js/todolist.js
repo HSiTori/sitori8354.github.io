@@ -9,7 +9,7 @@ function addTask(){
     var date=new Date();
     var dateString=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"
     var time=date.getHours()+":"+date.getMinutes();
-    $("#task-list").append("<li class=\"delete\"><label><input  class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+",<button id='js-delete-button'>刪除</button></li></label>");
+    $("#task-list").append("<li class=\"delete\"><label><input  class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+",<button id='js-delete-button' onclick='deleteTask();'>刪除</button></li></label>");
     $("#input").val("");
     updateTotalTaskNumber();
   }
