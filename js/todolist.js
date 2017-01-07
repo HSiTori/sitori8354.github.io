@@ -1,5 +1,5 @@
 
-
+console.log("001");
 updateTotalTaskNumber();
 
 function addTask(){
