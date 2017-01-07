@@ -3,6 +3,7 @@ console.log("001");
 updateTotalTaskNumber();
 
 function addTask(){
+  console.log("002");
   var value = $("#input").val();
   if(value!==""){
     var date=new Date();
