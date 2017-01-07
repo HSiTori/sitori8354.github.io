@@ -10,7 +10,7 @@ font-family: 'Nova Round';font-size: 22px;
   z-index:3
 }
 
-.myDiv .bg{
+//*.myDiv .bg{
   position:absolute;
   background-image:url("/images/apples.jpg");  
   background-repeat: repeat;
