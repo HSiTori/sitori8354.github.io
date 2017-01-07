@@ -21,7 +21,7 @@ function isEnterPressed(event){
   }
 }
 
-$("#add-button").on("click", addTask);
+$("button#add-button").on("click", addTask);
 
 
 $("#input").on("keypress", isEnterPressed);
