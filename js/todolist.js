@@ -29,6 +29,7 @@ function deleteTask(){
   console.log("003");
   var $target = $(this).closest("li");
   $target.remove();
+  $("button#js-delete-button").on("click", deleteTask);
   updateTotalTaskNumber();
 }
 $("button#js-delete-button").on("click", deleteTask);
