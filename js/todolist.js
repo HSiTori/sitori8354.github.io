@@ -27,6 +27,7 @@ $("input#input").on("keypress", isEnterPressed);
 
 function deleteTask(){
   console.log("003");
+  $("button#js-delete-button").on("click", deleteTask);
   var $target = $(this).closest("li");
   $target.remove();
   $("button#js-delete-button").on("click", deleteTask);
