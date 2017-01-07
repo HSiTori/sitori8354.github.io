@@ -75,3 +75,4 @@ function editlist(){
   task.find(".js-content").text(newtask);
 }
 $("body").on("click",".edit",editlist);
+ 
