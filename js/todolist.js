@@ -30,7 +30,7 @@ function deleteTask(){
   $target.remove();
   updateTotalTaskNumber();
 }
-$("body").on("click", ".js-delete-button", deleteTask);
+$("body").on("click", "button.js-delete-button", deleteTask);
                                  
  
 
