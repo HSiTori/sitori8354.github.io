@@ -26,6 +26,7 @@ $("input#input").on("keypress", isEnterPressed);
 
 
 function deleteTask(){
+  console.log("003");
   var $target = $(this).closest("li");
   $target.remove();
   updateTotalTaskNumber();
