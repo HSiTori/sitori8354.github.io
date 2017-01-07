@@ -4,7 +4,7 @@ updateTotalTaskNumber();
 
 function addTask(){
   console.log("002");
-  var value = $("#input").val();
+  var value = $("input#input").val();
   if(value!==""){
     var date=new Date();
     var dateString=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"
@@ -24,7 +24,7 @@ function isEnterPressed(event){
 $("button#add-button").on("click", addTask);
 
 
-$("#input").on("keypress", isEnterPressed);
+$("input#input").on("keypress", isEnterPressed);
 
 
 
