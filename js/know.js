@@ -5,7 +5,8 @@ function receive(){
   
 }
 function check(){
- var come=$("input#where").val();
- alert("你好,原來你"+come);
+  var come=$("input#where");
+  var where=[];
+  alert("你好,原來你"+come);
 
 }
