@@ -9,8 +9,8 @@ function check(){
   var whereopt=[];
   
   for(var i=0;i<whereopt.length;i++){
-   if( $(whereopt=[i]).prop("checked") ){
-    whereopt.push( $(whereopt=[i]).val() );
+   if( $(come=[i]).prop("checked") ){
+    whereopt.push( $(come[i]).val() );
    }
   }
   alert("你好,原來你"+whereopt[i]);
