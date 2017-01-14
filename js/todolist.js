@@ -33,7 +33,7 @@ function deleteTask(){
   console.log("005");  
   updateTotalTaskNumber();
 }
-$("button#js-delete-button").on("click", deletetask); 
+$("button#js-delete-button").on("click", deleteTask); 
 
 
 function updateTotalTaskNumber() {
