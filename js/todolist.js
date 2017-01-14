@@ -30,16 +30,10 @@ function deleteTask(){
   var $target = $(this).closest("li");
   console.log("004");
   $target.remove();
-  console.log("005");
-  $("button#js-delete-button").on("click", deletetask);  
+  console.log("005");  
   updateTotalTaskNumber();
 }
-function deletetask(){
-var $target = $(this).closest("li");
-  $target.remove();
-  updateTotalTaskNumber();
-}                                 
- 
+$("button#js-delete-button").on("click", deletetask); 
 
 
 function updateTotalTaskNumber() {
