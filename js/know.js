@@ -1,6 +1,6 @@
 
 function receive(){
-  var name=$("input#know")
+  var name=$("input#knowinput").val();
   alert("hi");
   
 }
