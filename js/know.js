@@ -7,6 +7,7 @@ function receive(){
 function check(){
   var come=$("input#where");
   var whereopt=[];
-  alert("你好,原來你"+whereopt[]);
+  whereopt.push( $(whereopt=[i]).val() );
+  alert("你好,原來你"+whereopt[i]);
 
 }
