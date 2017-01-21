@@ -22,7 +22,7 @@ $("input#input").on("keypress", isEnterPressed);
 
 function deleteTask(){
   console.log("003");
-  console.log($(this).closest("li"));
+  console.log($(this).closest("li")+"YA");
   var $target = $(this).closest("li");
   $target.remove(); 
   updateTotalTaskNumber();
