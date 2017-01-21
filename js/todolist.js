@@ -22,12 +22,11 @@ $("input#input").on("keypress", isEnterPressed);
  $("ul#task-list").on("click","button#delete-button",deleteTask);
 function deleteTask(){
   console.log("003");
-  console.log($(this).closest("ul").text()+"YA");
-  var $target = $(this).closest("ul");
+  console.log($(this).closest("li").text()+"YA");
+  var $target = $(this).closest("li");
   $target.remove(); 
   updateTotalTaskNumber();
 }
-$("button#delete-button").on("click", deleteTask); 
 
 
 function updateTotalTaskNumber() {
