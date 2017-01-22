@@ -35,3 +35,8 @@ h1{
   border-width:0px 0px 0px 10px;
   border-color:rgba(173,173,173,0.9);
 }
+
+
+#todolistjpg{
+width:150px;height:60px
+}
