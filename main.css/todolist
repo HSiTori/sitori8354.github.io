@@ -38,6 +38,5 @@ h1{
 
 
 #todolistjpg{
-width:150px;
-height:60px;
+margin: 0 auto;
 }
