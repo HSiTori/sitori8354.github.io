@@ -1,10 +1,17 @@
 
+var count=1;
+updateTotalTaskNumber();
+function addTask(){
+  console.log("002");
+  var value = $("input#input").val();
+
+
 updateTotalTaskNumber();
 function addTask(){
   console.log("002");
   var value = $("input#input").val();
   if(value!==""){
-    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button id='delete-button' onclick='deleteTask();'>刪除</button></li>");
+    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button id='delete-button"+count+"' onclick='deleteTask(i);'>刪除</button></li>");
     $("#input").val("");
     updateTotalTaskNumber();
   }
@@ -20,10 +27,9 @@ $("input#input").on("keypress", isEnterPressed);
 
 
  $("ul#task-list").on("click","button#delete-button",deleteTask);
-function deleteTask(){
-  console.log("003");
-  console.log($(this).closest("li").text()+"YA");
-  var $target = $(this).closest("li");
+function deleteTask(i){
+  console.log($("button#delete-button"+i).closest("li").text()+"YA");
+  var $target = $("button#delete-button"+i).closest("li");
   $target.remove(); 
   updateTotalTaskNumber();
 }
