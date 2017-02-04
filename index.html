@@ -168,7 +168,7 @@
      </tr>
   </tbody>
 </table>
-
+<button id="test" onclick="showitem();">測試~~~</button>
 <div id="menu">
  <table>
   <thead>
@@ -182,8 +182,8 @@
  </table>
 </div> 
  
- 
- <script>
+
+<script>
  var fdb = new ForerunnerDB();
  var db = fdb.db("童話鬆餅屋");
  var foodCollection = db.collection('soubin');
@@ -194,12 +194,11 @@
  $("tbody").text();
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
-  var commentdata = "<tr><td>"+
- }
- }
- 
- 
- </script>
+  var commentdata = "<tr><td>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
+  $("tbody").append(commentdata);
+ };
+ };
+</script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
