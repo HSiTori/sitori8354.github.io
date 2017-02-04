@@ -137,7 +137,7 @@
  $("div#menu").hide();
  
  function showitem(){
- $("tbody").text();
+ $("tbody").text("");
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
   var commentdata = "<tr><td>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
