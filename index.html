@@ -113,13 +113,6 @@
     </div>
   </div>
 </div>
- 
- <script>
-var fdb = new ForerunnerDB();
-var db = fdb.db("童話鬆餅屋");
-var foodCollection = db.collection('soubin');
-foodCollection.load();
- </script>
 
 <table>
   <thead>
@@ -175,10 +168,38 @@ foodCollection.load();
      </tr>
   </tbody>
 </table>
+
+<div id="menu">
+ <table>
+  <thead>
+     <tr>
+        <td>鬆餅口味</td>
+        <td>價格</td>
+     </tr>
+  </thead>
+  <tbody>
+  </tbody>
+ </table>
+</div> 
  
  
+ <script>
+ var fdb = new ForerunnerDB();
+ var db = fdb.db("童話鬆餅屋");
+ var foodCollection = db.collection('soubin');
+ foodCollection.load();
+ $("div#menu").hide();
+ 
+ function showitem(){
+ $("tbody").text();
+ $("div#menu").show();
+ for(var i=0;i<foodCollection.find().length;i++){
+  var commentdata = "<tr><td>"+
+ }
+ }
  
  
+ </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
