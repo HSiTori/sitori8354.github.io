@@ -4,16 +4,11 @@ updateTotalTaskNumber();
 function addTask(){
   console.log("002");
   var value = $("input#input").val();
-
-
-updateTotalTaskNumber();
-function addTask(){
-  console.log("002");
-  var value = $("input#input").val();
   if(value!==""){
-    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button id='delete-button"+count+"' onclick='deleteTask(i);'>刪除</button></li>");
+    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button id='delete-button"+count+"' onclick='deleteTask("+count+");'>刪除</button></li>");
     $("#input").val("");
     updateTotalTaskNumber();
+    count++;
   }
 }
 
