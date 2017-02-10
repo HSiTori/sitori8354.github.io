@@ -13,12 +13,11 @@
 body {
     background-color: lightblue;
 }
-
-h1 {
-    color: white;
+.modal-fade {
+    font-family: cursive;
     text-align: center;
-}
-
+    background-color: ;
+ }
 .container-fluid {
     font-family: cursive;
     font-size: 20px;
@@ -55,7 +54,7 @@ h1 {
 </div>
 </nav>
  
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -64,7 +63,7 @@ h1 {
       </div>
       <div class="modal-body">
        <div class="container">
-          <input id="input" class="js-task-checkbox" type="text"><button id="add-button" onclick="addTask();">加入</button>
+          <input id="input" class="js-task-checkbox" type="text"><button id="add-button" class="btn btn-info" onclick="addTask();">加入</button>
        <div class="clear-float">
          <ul id="task-list" style="list-style: none">
           <li class="delete"></li> 
