@@ -113,11 +113,14 @@
 <div id="answer" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+     <div class="modal-header">
      <h1>搜尋結果</h1>
      <p id="searchresult"></p>
+      </div>
     </div>
   </div>
 </div>
+
 <input id='search'><input type="button" class="btn btn-primary" onclick="search()" data-toggle="modal" data-target="#answer" value="SEARCH">
 <button id="test" onclick="showitem();">測試~~~</button>
 <div class="container">
@@ -148,7 +151,7 @@
  $("tbody").text("");
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
-  var commentdata = "<tr><td>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
+  var commentdata = "<a href='#' data-toggle='modal' data-target='#answer'><tr><td>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr></a>";
   $("tbody").append(commentdata);
  };
  };
