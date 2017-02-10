@@ -76,13 +76,27 @@
       <div class="modal-body">
        <div class="container">
         <ul>
+        <li>
         <h3>你 是 誰?</h3>
         <h6>來 來，告訴我你的名字，不然不知道怎麼稱呼你喔OwO</h6>
-        <input id="" type="text" value="你的回答"/>
-        <button id="" onclick="">確定</button>
+        <input id="" type="text" class="form-control"/>
+        <button id="" onclick="" class="btn btn-info">確定</button>
+        </li>
+        <li>
+        <h3>你從哪裡來~~?</h3> 
+        <h6>要好好回答喔//</h6>
+         <input id="where" type="checkbox" value="朋友">(敲額頭)我是你朋友，你竟然不知道?<br>
+         <input id="where" type="checkbox" value="現實">學校or其他地方又碰過面喔//<br>
+         <input id="where" type="checkbox" value="路過">我 我只是路過!!<br>
+         <input id="where" type="checkbox" value="網路">賴or臉書的時候聊過<br>
+         <input id="where" type="checkbox" value="遊戲">一起打遊戲的好同伴嗷嗷~~<br>
+        </li>
+        <div class="form-group">
+          <label for="comment">還有甚麼話想跟我說的??說越多我越高興喔喔喔www</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
         </ul>  
-       
-      </div>
+       </div>
      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -90,29 +104,7 @@
     </div>
   </div>
 </div> 
- 
-<div id="bs-example-modal-lg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-     <h1>LET ME KNOW YOU!</h1>
-     <ul>
-       <li>你的名字是?</li> 
-         <input id="knowinput" type="text"/>
-         <button id="knowadd1" onclick="receive();">確定</button>
-       <li>你是怎麼知道這裡的?</li>
-         <input id="where" type="checkbox" value="是路過的">路過<br>
-         <input id="where" type="checkbox" value="是朋友介紹來的">朋友介紹<br>
-         <input id="where" type="checkbox" value="以前來過">以前來過<br>
-         <input id="where" type="checkbox" value="是駭進來的">駭進來的<br>
-         <input id="where" type="checkbox" value="不知道妳怎麼來的">不知道<br>
-         <button id="knowadd2" onclick="check();">確定</button>
-     </ul>
-    </div>
-  </div>
-</div>
 
-
- 
  
 <div id="answer" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
