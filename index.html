@@ -151,11 +151,28 @@ body {
   <tbody>
   </tbody>
  </table>
+
+ </div>
+</div>
+</div>
+<div class="container">
+<div class="row">    
+ <div id="menu">
+ <table class="table table-hover">
+  <thead>
+     <tr>
+        <td>鬆餅口味</td>
+        <td>價格</td>
+     </tr>
+  </thead>
+  <tbody>
+  </tbody>
+ </table>
 </div>
 </div>
 </div>
 
-<script>
+ <script>
  var fdb = new ForerunnerDB();
  var db = fdb.db("童話鬆餅屋");
  var foodCollection = db.collection('soubin');
@@ -166,7 +183,7 @@ body {
  $("tbody").text("");
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
-  var commentdata = "<tr><a href='#' data-toggle='modal' data-target='#answer'><td>"+foodCollection.find()[i].name+"</td></a>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
+  var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
   $("tbody").append(commentdata);
  };
  };
