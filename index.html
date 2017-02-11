@@ -156,7 +156,7 @@ body {
 <div class="container">
 <div class="row">    
  <div id="friendlist">
- <table class="table table-hover">
+ <table id="" class="table table-hover">
   <thead>
      <tr>
         <td>名字</td>
@@ -196,8 +196,8 @@ body {
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var commentdata = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td></tr>";
-  $("tbody").append(commentdata);
+  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td></tr>";
+  $("table#friendtable tbody").append(comment);
  };
  };
 $("table").on("click","button#enter",quest);
