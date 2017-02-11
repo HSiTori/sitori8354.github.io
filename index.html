@@ -218,7 +218,7 @@ $("table").on("click","button#enter",quest);
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
   var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer' id='showdetail'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
-  $("tbody#foodlist tbody").append(commentdata);
+  $("table#foodlist tbody").append(commentdata);
  };
  };
  function search(){
