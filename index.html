@@ -93,19 +93,15 @@ body {
         <div class="row">
         <ul>
         <li>
-        <h3>你 是 誰?</h3>
+        <h3>你 是 誰 ?</h3>
         <h6>來 來，告訴我你的名字，不然不知道怎麼稱呼你喔OwO</h6>
-        <div class="col-md-2"><input type="text" class="form-control" class="col-md-4" /></div>
+        <div class="col-md-2"><input type="text" class="form-control" id="name"/></div>
         <button onclick="" class="btn btn-info">確定</button>
         </li>
         <li>
-        <h3>你從哪裡來~~?</h3> 
-        <h6>要好好回答喔//</h6>
-         <input id="where" type="checkbox" value="朋友">(敲額頭)我是你朋友，你竟然不知道?<br>
-         <input id="where" type="checkbox" value="現實">學校or其他地方又碰過面喔//<br>
-         <input id="where" type="checkbox" value="路過">我 我只是路過!!<br>
-         <input id="where" type="checkbox" value="網路">賴or臉書的時候聊過<br>
-         <input id="where" type="checkbox" value="遊戲">一起打遊戲的好同伴嗷嗷~~<br>
+        <h3>敢 問 芳 齡 ??</h3>
+        <h6>(小聲)偷偷告訴我你的年紀嘛~~</h6>
+        <div class="col-md-2"><input type="text" class="form-control" id="age"/></div>
         </li>
          <div class="form-group">
           <div class="col-md-4">
@@ -118,7 +114,8 @@ body {
         </div>
      </div>
          <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -161,18 +158,22 @@ body {
  var fdb = new ForerunnerDB();
  var db = fdb.db("friend");
  var friendCollection = db.collection('friend');
-  
- var newfriend = {
+ friendCollection.load(); 
  
-    name=""
-    age=""
-    where=""
-    other=""
- } 
+  function quest(){
+    var  q1 = $("input#name").val();   
+    var  q2 = $("input#age").val();
+    var  q3 = $("textarea#comment").val();
+   var newfriend = {
+    name: q1,
+    age: q2,
+    other: q3
+ };
+  friendCollection.insert(newfriend);
+  friendCollection.save();
+  }  
   
-  
-  
-  
+  $("table").on("click","button#enter",quest);
   
   
   
