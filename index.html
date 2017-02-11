@@ -152,14 +152,33 @@ body {
 </div>
 </div>
 
-
- <script>
+<button id="list" onclick="showdata();">跑出資料</button>
+<div class="container">
+<div class="row">    
+ <div id="friendlist">
+ <table class="table table-hover">
+  <thead>
+     <tr>
+        <td>名字</td>
+        <td>年紀</td>
+        <td>其他</td>
+     </tr>
+  </thead>
+  <tbody>
+  </tbody>
+ </table>
+ </div>
+</div>
+</div>
+ 
+<script>
  
  var fdb = new ForerunnerDB();
  var db = fdb.db("friend");
  var friendCollection = db.collection('friend');
  friendCollection.load(); 
- 
+ $("div#friendlist").hide();
+
   function quest(){
     var  q1 = $("input#name").val();   
     var  q2 = $("input#age").val();
@@ -173,7 +192,15 @@ body {
   friendCollection.save();
   }  
   
-  $("table").on("click","button#enter",quest);
+ function showdata(){
+ $("tbody").text("");
+ $("div#friendlist").show();
+ for(var i=0;i<friendCollection.find().length;i++){
+  var commentdata = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td></tr>";
+  $("tbody").append(commentdata);
+ };
+ };
+$("table").on("click","button#enter",quest);
   
   
   
