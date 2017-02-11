@@ -138,7 +138,7 @@ body {
 <div class="container">
 <div class="row">    
  <div id="menu">
- <table class="table table-hover">
+ <table id="foodlist" class="table table-hover">
   <thead>
      <tr>
         <td>鬆餅口味</td>
@@ -218,7 +218,7 @@ $("table").on("click","button#enter",quest);
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
   var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer' id='showdetail'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
-  $("tbody").append(commentdata);
+  $("tbody#foodlist tbody").append(commentdata);
  };
  };
  function search(){
