@@ -151,26 +151,10 @@ body {
   <tbody>
   </tbody>
  </table>
-
  </div>
 </div>
 </div>
-<div class="container">
-<div class="row">    
- <div id="menu">
- <table class="table table-hover">
-  <thead>
-     <tr>
-        <td>鬆餅口味</td>
-        <td>價格</td>
-     </tr>
-  </thead>
-  <tbody>
-  </tbody>
- </table>
-</div>
-</div>
-</div>
+
 
  <script>
  var fdb = new ForerunnerDB();
@@ -183,7 +167,7 @@ body {
  $("tbody").text("");
  $("div#menu").show();
  for(var i=0;i<foodCollection.find().length;i++){
-  var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
+  var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer' id='showdetail'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
   $("tbody").append(commentdata);
  };
  };
@@ -191,9 +175,16 @@ body {
   var query = {
     name: $("input#search").val()
 };
-  console.log("ya");
   $("p#searchresult").find(query);
  }
+ 
+ function showdetail(){
+   
+   $("#menu").append(commentdata);
+ }
+ 
+ $("table").on("click","a#showdetail",showdetail)
+ 
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
