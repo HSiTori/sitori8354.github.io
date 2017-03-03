@@ -108,7 +108,7 @@ body {
         <br>
         <li>
          <h4>還有甚麼話想跟我說的??說越多我越高興喔喔喔www</h4>
-         <div class="col-md-2"><textarea class="form-control" rows="2" id="comment"></textarea></div>
+         <textarea class="form-control" rows="2" id="comment"></textarea>
         </li>
          </ul>  
         </div>
@@ -136,22 +136,7 @@ body {
 
 <input id='search'><input type="button" class="btn btn-primary" onclick="search()" data-toggle="modal" data-target="#answer" value="SEARCH">
 <button id="test" onclick="showitem();">測試~~~</button>
-<div class="container">
-<div class="row">    
- <div id="menu">
- <table id="foodlist" class="table table-hover">
-  <thead>
-     <tr>
-        <td>鬆餅口味</td>
-        <td>價格</td>
-     </tr>
-  </thead>
-  <tbody>
-  </tbody>
- </table>
- </div>
-</div>
-</div>
+
 
 <button id="list" onclick="showdata();">跑出資料</button>
 <div class="container">
@@ -208,20 +193,8 @@ $("table").on("click","button#enter",quest);
   
   
   
- var fdb = new ForerunnerDB();
- var db = fdb.db("童話鬆餅屋");
- var foodCollection = db.collection('soubin');
- foodCollection.load();
- $("div#menu").hide();
+---/鬆餅屋剩餘/---
  
- function showitem(){
- $("tbody").text("");
- $("div#menu").show();
- for(var i=0;i<foodCollection.find().length;i++){
-  var commentdata = "<tr><td a href='#' data-toggle='modal' data-target='#answer' id='showdetail'>"+foodCollection.find()[i].name+"</td>"+"<td>"+foodCollection.find()[i].price+"</td></tr>";
-  $("table#foodlist tbody").append(commentdata);
- };
- };
  function search(){
   var query = {
     name: $("input#search").val()
