@@ -14,9 +14,36 @@
   margin:auto;
   padding:20px 40px 100px 40px;
   border-radius:20px;
-  box-shadow:20px 20px 100px #FFCCCC
+  box-shadow:100px 100px 100px #FFCCCC
 }
 .js-content {
-    font-family: cursive;
-    font-size: 25px;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+
+
+
+.modal-header{
+  font-family: cursive;
+  font-size: 30px;
+  height: 30.666667px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+}
+.modal-body{
+  height: 180px;
+  width: 520px;
+  padding-top: 15px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+.modal-footer{
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 5px;
+  padding-right: 0px;
 }
