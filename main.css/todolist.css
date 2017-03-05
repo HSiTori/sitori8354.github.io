@@ -1,16 +1,17 @@
-body {
 
-div.modal-body {
-  background-color:red
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center center;
-}
+#todolist { 
 
-img#todolistjpg{
-margin: 0 auto;
+background-image: url(http://img.taopic.com/uploads/allimg/140330/234777-14033020353761.jpg);
+
+
 }
 
 
 
+
+
+
+
+#list {
+  
 }
