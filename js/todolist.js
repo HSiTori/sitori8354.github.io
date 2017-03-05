@@ -5,12 +5,14 @@ function addTask(){
   console.log("002");
   var  value= $("input#input").val();
   if(value!==""){
-    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' style='checkbox checkbox-primary' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button class='btn btn-danger btn-xs' id='delete-button"+count+"' onclick='deleteTask("+count+");'>刪除</button></li>");
+    $("#task-list").append("<li class='delete'><div class="checkbox checkbox-primary"><input id="checkbox2" type="checkbox" checked=""><label for="checkbox2">Primary</label></div><span class='js-content'>"+value+"</span>"+"<button class='btn btn-danger btn-xs' id='delete-button"+count+"' onclick='deleteTask("+count+");'>刪除</button></li>");
     $("#input").val("");
     updateTotalTaskNumber();
     count++;
   }
 }
+
+
 
 function isEnterPressed(event){
   if (event.which === 13){
