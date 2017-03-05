@@ -10,9 +10,9 @@
   width:600px;
   height:300px;
   margin:auto;
-  padding:20px 40px 100px 40px;
+  padding:20px 30px 100px 40px;
   border-radius:20px;
-  box-shadow:100px 100px 100px #FFCCCC
+  box-shadow:20px 20px 20px 20px #FFCCCC
 }
 .modal-header-todo{
   height: 50px;
