@@ -1,1 +1,14 @@
 
+body {
+    background-color: lightblue;
+}
+.container-fluid {
+    font-family: cursive;
+    font-size: 20px;
+}
+#list {
+  background-image: url(http://img.taopic.com/uploads/allimg/140330/234777-14033020353761.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
