@@ -5,7 +5,7 @@ function addTask(){
   console.log("002");
   var  value= $("input#input").val();
   if(value!==""){
-    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' type='checkbox'><span class='js-content'>"+value+"</span>"+"            "+"<button class='btn btn-danger btn-xs' id='delete-button"+count+"' onclick='deleteTask("+count+");'>刪除</button></li>");
+    $("#task-list").append("<li class='delete'><input class='js-task-checkbox' style='checkbox checkbox-primary' type='checkbox'><span class='js-content'>"+value+"</span>"+"<button class='btn btn-danger btn-xs' id='delete-button"+count+"' onclick='deleteTask("+count+");'>刪除</button></li>");
     $("#input").val("");
     updateTotalTaskNumber();
     count++;
