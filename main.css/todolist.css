@@ -1,11 +1,9 @@
 
 #myModal { 
-
   background-image: url(http://static.tumblr.com/cvgkwgc/kBSm7jjx6/tumblr_m7i2m1oink1rw1vv3o1_500.png);
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center center;
-
 }
 #listbg {
   background-color:rgba(255,255,255,0.5);
@@ -16,17 +14,7 @@
   border-radius:20px;
   box-shadow:100px 100px 100px #FFCCCC
 }
-.js-content {
-  font-family: cursive;
-  font-size: 25px;
-}
-
-
-
-
 .modal-header{
-  font-family: cursive;
-  font-size: 30px;
   height: 30.666667px;
   padding-bottom: 0px;
   padding-left: 0px;
@@ -46,4 +34,14 @@
   padding-left: 0px;
   padding-top: 5px;
   padding-right: 0px;
+}
+
+
+.js-content {
+  font-family: cursive;
+  font-size: 25px;
+}
+.modal-title{
+  font-family: cursive;
+  font-size: 30px;
 }
