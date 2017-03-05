@@ -14,14 +14,14 @@
   border-radius:20px;
   box-shadow:100px 100px 100px #FFCCCC
 }
-.modal-header{
+.modal-header-todo{
   height: 50px;
   padding-bottom: 0px;
   padding-left: 0px;
   padding-top: 0px;
   padding-right: 0px;
 }
-.modal-body{
+.modal-body-todo{
   height: 180px;
   width: 520px;
   padding-top: 15px;
@@ -29,7 +29,7 @@
   padding-bottom: 0px;
   padding-right: 0px;
 }
-.modal-footer{
+.modal-footer-todo{
   padding-bottom: 0px;
   padding-left: 0px;
   padding-top: 5px;
