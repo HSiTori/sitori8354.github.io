@@ -173,7 +173,7 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type="button" class="btn btn-danger" onclick="delete()" value="DELETE"></td></tr>";
+  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-danger' onclick='delete()' value='DELETE'></td></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
