@@ -180,13 +180,31 @@
  };
 $("table").on("click","button#enter",quest);
   
+ 
+ var r=confirm("Press a button")
+  if (r==true)
+    {
+    document.write("You pressed OK!")
+    }
+  else
+    {
+    document.write("You pressed Cancel!")
+    }
+ 
  function deletedetail(i){
+  var r=confirm("確定要刪除嗎?")
   console.log(i);
+  if (r==true){
   friendCollection.remove({
     _id: friendCollection.find()[i]._id
 });
   friendCollection.save();
   showdata();
+  }
+  else
+    {
+    document.write("好的!不刪除!")
+    }
  } 
   
  function search(){
