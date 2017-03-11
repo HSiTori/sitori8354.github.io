@@ -185,6 +185,7 @@ $("table").on("click","button#enter",quest);
   friendCollection.remove({
     _id: friendCollection.find()[i]._id
 });
+  friendCollection.save();
  } 
   
  function search(){
