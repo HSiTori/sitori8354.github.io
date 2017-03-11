@@ -183,7 +183,7 @@ $("table").on("click","button#enter",quest);
  function deletedetail(i){
   console.log("h1");
   collection.remove({
-    _id: "friendCollection.find()[i]._id"
+    _id: friendCollection.find()[i]._id
 });
  } 
   
