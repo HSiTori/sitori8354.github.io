@@ -174,13 +174,13 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-danger"+i+"' onclick='delete("+i+");' value='DELETE'></td></tr>";
+  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-danger"+i+"' onclick='deletedetail("+i+");' value='DELETE'></td></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
 $("table").on("click","button#enter",quest);
   
- function delete(i){
+ function deletedetail(i){
   console.log("h1");
   collection.remove({
     _id: "friendCollection.find()[i]._id"
