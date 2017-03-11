@@ -135,6 +135,7 @@
  <table id="friendtable" class="table table-hover" style="width: 300px; height: 250px;">
   <thead>
      <tr>
+        <td>ID</td>
         <td>名字</td>
         <td>年紀</td>
         <td>其他</td>
@@ -173,7 +174,7 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-danger' onclick='delete()' value='DELETE'></td></tr>";
+  var comment = "<tr><td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-danger' onclick='delete()' value='DELETE'></td></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
@@ -200,6 +201,11 @@ $("table").on("click","button#enter",quest);
  
  $("table").on("click","a#showdetail",showdetail)
  
+ function delete(){
+ 
+ 
+ 
+ }
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
