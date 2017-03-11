@@ -158,9 +158,12 @@
  $("div#friendlist").hide();
 
   function quest(){
-    var  q1 = $("input#name").val();   
+    var  q1 = $("input#name").val();
+    $("input#name").val("");
     var  q2 = $("input#age").val();
+    $("input#age").val("");
     var  q3 = $("textarea#comment").val();
+   $("input#comment").val("");
    var newfriend = {
     name: q1,
     age: q2,
@@ -170,7 +173,7 @@
   friendCollection.save();
   showdata();
   }  
-  
+  $("#input").val("");
  function showdata(){
  $("tbody").text("");
  $("div#friendlist").show();
