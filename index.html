@@ -124,7 +124,7 @@
   </div>
 </div>
 
-<input id='search'><input type="button" class="btn btn-primary" onclick="search();" data-toggle="modal" data-target="#answer" value="SEARCH">
+<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-toggle="modal" data-target="#answer" value="SEARCH">
 
 
 
@@ -202,7 +202,7 @@ $("table").on("click","button#enter",quest);
     }
  } 
   
- function search(){
+ function searchdetail(){
   var query = {
     name: $("input#search").val()
 };
