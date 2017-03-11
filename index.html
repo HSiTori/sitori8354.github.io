@@ -138,6 +138,7 @@
         <td>名字</td>
         <td>年紀</td>
         <td>其他</td>
+        <td>操作</td>
      </tr>
   </thead>
   <tbody>
@@ -172,7 +173,7 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td></tr>";
+  var comment = "<tr><td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type="button" class="btn btn-danger" onclick="delete()" value="DELETE"></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
