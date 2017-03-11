@@ -1,6 +1,9 @@
 
 body {
-    background-color: lightblue;
+    background-image: url(http://blog-imgs-48.fc2.com/h/e/d/hedhu/ff13_6-1.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
 }
 .container-fluid {
     font-family: cursive;
