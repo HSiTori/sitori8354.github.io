@@ -10,6 +10,8 @@ body {
     font-size: 20px;
 }
 
-.collapse navbar-collapse navbar-collapse-center {
-    background-color:rgba(255,255,255,0.5);
+.navbar-inverse {
+    background-color: rgba(8, 8, 8, 0.5);
+    border-color: #080808;
 }
+
