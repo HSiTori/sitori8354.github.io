@@ -206,7 +206,7 @@ $("table").on("click","button#enter",quest);
   var query = {
     name: $("input#search").val()
 };
-  result = friendcollection.find(query);
+  var result = friendcollection.find(query);
   console.log(result);
  }
  
