@@ -209,7 +209,11 @@ $("table").on("click","button#enter",quest);
   var result = friendCollection.find(query);
   if(result!=""){
   console.log(result[0].name);
-  console.log("h1");}
+  console.log("h1");
+  }else{
+  alert("搜尋錯誤");
+  
+  }
  }
 
  
