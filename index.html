@@ -209,7 +209,7 @@ $("table").on("click","button#enter",quest);
     name: $("input#search").val()
 };
   var result = friendCollection.find(query);
-  if(result[0].name!=""){
+  if(result!=""){
   console.log(result[0].name);
   console.log("h1");
   }else{
