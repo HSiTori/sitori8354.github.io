@@ -88,13 +88,11 @@
         <h4>你 是 誰 ?</h4>
         <h6>來 來，告訴我你的名字，不然不知道怎麼稱呼你喔OwO</h6>
         <div class="col-md-2"><input type="text" class="form-control" id="name"/></div>
-        <button onclick="" class="btn btn-info">確定</button>
         </li>
         <li>
         <h4>敢 問 芳 齡 ??</h4>
         <h6>(小聲)偷偷告訴我你的年紀嘛~~</h6>
         <div class="col-md-2"><input type="text" class="form-control" id="age"/></div>
-        <button onclick="" class="btn btn-info">確定</button>
         </li>
         <br>
         <li>
@@ -129,10 +127,29 @@
 </div>
  
 <div id="changedata" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog modal" role="document">
     <div class="modal-content">
      <div class="modal-header">
-     <h1>搜尋結果</h1>
+       <h1>修改資料</h1>   
+     <div class="modal-body">
+     <div class="container">
+     <div class="row">
+      <div class="form-group">
+        <label for="inputname">想要更改的名字?</label>
+        <input type="email" class="form-control" id="inputname" placeholder="Enter your name">
+        <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+      </div>
+      
+       <h4>年齡</h4>
+      
+       <h4>其他</h4> 
+     </div>
+     </div>
+     </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal" id="enter" onclick="quest();">Enter</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
      <p id="searchresult"></p>
       </div>
     </div>
