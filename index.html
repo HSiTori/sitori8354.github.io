@@ -156,7 +156,7 @@
      </div>
      </div>
       <div class="modal-footer">
-         <button type="button" class="btn btn-default" data-dismiss="modal" id="enter" onclick="quest();">Enter</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal" id="change" onclick="changedetail();">Enter</button>
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
      <p id="searchresult"></p>
@@ -217,7 +217,7 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-info' data-toggle='modal' data-target='#changedata' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
+  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='setting("+i+");' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
@@ -256,8 +256,28 @@ $("table").on("click","button#enter",quest);
   }
  }
 
+ function setting(i){
  
+  var editdataid = $(this).data("id")
+  
+ }
  
+ function changedetail(i){
+    var  d1 = $("input#inputname").val();
+    $("input#inputname").val("");
+    var  d2 = $("input#inputage").val();
+    $("input#inputage").val("");
+    var  d3 = $("textarea#inputother").val();
+    $("textarea#inputother").val("");
+    var newdata = {
+    name: d1,
+    age: d2,
+    other: d3
+ };
+ DB.collection("friend").updateById(editdataid,newdata);
+ } 
+ $("table").on("click","button#changefirst",setting);
+ $("table").on("click","button#change",changedetail);
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
