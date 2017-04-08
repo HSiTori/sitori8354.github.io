@@ -291,7 +291,7 @@ function searchdetail(){
 };
   var result = friendCollection.find(query);
   if(result!=""){
-  $("div#answer").text("");
+  $("p#searchresult").text("");
   for(var i=0;i<result.length;i++){
   var searchdata = "Name:"+result[i].name+"&nbsp;"+"Sex"+result[i].sex+"&nbsp;"+"Age"+result[i].age+"&nbsp;"+"Others"+result[i].others+"<br>" 
   $("p#searchresult").append(searchdata)
