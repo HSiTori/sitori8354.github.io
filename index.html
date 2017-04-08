@@ -192,6 +192,8 @@
  
  男生<input id="gender" type="checkbox" name="boy" value="boy">
  女生<input id="gender" type="checkbox" name="girl" value="girl">
+ <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選">
+ 
 
   
   <div>
@@ -302,12 +304,12 @@ function searchdetail(){
   }
  }
  
- 
+function select(){ 
 var checklist = [ ]
-   for(var i=0;i<Array.length;i++){
-    checklist.push(Array[i].value)
-   
+for(var i=0;i<$("#gender:checked").length;i++){
+    checklist.push($("#gender:checked")[i].value)
    }
+}
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
