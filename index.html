@@ -175,6 +175,7 @@
      <tr>
         <td>ID</td>
         <td>名字</td>
+        <td>性別</td>
         <td>年紀</td>
         <td>其他</td>
         <td>操作</td>
@@ -193,25 +194,31 @@
 
   
   <div>
-  <div class="body" width: 340px; height: 250px;>
+  <div class="select-body">
        <div class="container">
         <ul>
         <div class="form-group">
           <label for="inputage">你的名字</label>
-          <input class="form-control" id="selectname" placeholder="Enter your name">
-          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+          <input id="name" class="form-control" placeholder="Enter your name">
+          <small id="joke" class="form-text text-muted"></small>
         </div>
         <div class="form-group">
           <label for="inputage">年齡</label>
-          <input class="form-control" id="selectage" placeholder="Enter your age">
-          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+          <input id="age" class="form-control" placeholder="Enter your age">
+          <small id="joke" class="form-text text-muted"></small>
         </div>
         <div class="form-group">
           <label for="inputage">性別</label>
-          <input class="form-control" id="selectsex" placeholder="boy or girl?">
-          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+          <input id="sex" class="form-control" placeholder="boy or girl?">
+          <small id="joke" class="form-text text-muted"></small>
         </div>
-         </ul>  
+        <div class="form-group">
+          <label for="inputother">其他</label>
+          <input id="comment" class="form-control" id="inputother" placeholder="something else?">
+          <small id="joke" class="form-text text-muted"></small>
+        </div>
+         </ul>
+        <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
         </div>
 </div>
 </div>
@@ -230,11 +237,14 @@
     var  q2 = $("input#age").val();
     $("input#age").val("");
     var  q3 = $("textarea#comment").val();
-   $("textarea#comment").val("");
+    $("textarea#comment").val("");
+    var  q4 = $("textarea#sex").val();
+    $("textarea#sex").val("");
    var newfriend = {
     name: q1,
     age: q2,
-    other: q3
+    others: q3,
+    sex: q4
  };
   friendCollection.insert(newfriend);
   friendCollection.save();
@@ -245,7 +255,7 @@
  $("tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='changedefirst();' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
+  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].sex+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].other+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='changedefirst();' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
   $("table#friendtable tbody").append(comment);
  };
  };
@@ -269,6 +279,11 @@ $("table").on("click","button#enter",quest);
     }
  } 
   
+result = collection.find({
+
+
+})
+ 
 var checklist = [ ]
    for(var i=0;i<Array.length;i++){
     checklist.push(Array[i].value)
