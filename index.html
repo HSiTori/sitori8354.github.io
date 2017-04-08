@@ -140,7 +140,6 @@
         <input class="form-control" id="inputname" placeholder="Enter your name">
         <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
       </div>
-      
       <div class="form-group">
         <label for="inputage">想要更改的年齡?</label>
         <input class="form-control" id="inputage" placeholder="Enter your age">
@@ -185,6 +184,37 @@
   </tbody>
  </table>
  </div>
+</div>
+</div>
+ 
+ 
+ 男生<input id="gender" type="checkbox" name="boy" value="boy">
+ 女生<input id="gender" type="checkbox" name="girl" value="girl">
+
+  
+  <div>
+  <div class="body">
+       <div class="container">
+        <div class="row">
+        <ul>
+        <div class="form-group">
+          <label for="inputage">你的名字</label>
+          <input class="form-control" id="selectname" placeholder="Enter your name">
+          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        </div>
+        <div class="form-group">
+          <label for="inputage">年齡</label>
+          <input class="form-control" id="selectage" placeholder="Enter your age">
+          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        </div>
+        <div class="form-group">
+          <label for="inputage">性別</label>
+          <input class="form-control" id="selectsex" placeholder="boy or girl?">
+          <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        </div>
+         </ul>  
+         </div>
+       </div>
 </div>
 </div>
  
@@ -241,43 +271,7 @@ $("table").on("click","button#enter",quest);
     }
  } 
   
- function searchdetail(){
-  var query = {
-    name: $("input#search").val()
-};
-  var result = friendCollection.find(query);
-  if(result!=""){
-  console.log(result[0].name);
-  console.log("h1");
-  }else{
-  alert("搜尋錯誤");
-  $("div#answer").hide();
-  $("div#searcherror").show(); 
-  }
- }
-var editdataid;
- function(){
-  editdataid=$(this).data("id");
-  
-  
-}
-  
- function changedetail(i){
-    var  d1 = $("input#inputname").val();
-    $("input#inputname").val("");
-    var  d2 = $("input#inputage").val();
-    $("input#inputage").val("");
-    var  d3 = $("textarea#inputother").val();
-    $("textarea#inputother").val("");
-    var newdata = {
-    name: d1,
-    age: d2,
-    other: d3
- };
- db.collection("friend").updateById(editdataid,newdata);
- } 
- $("table").on("click","button#changefirst",setting);
- $("table").on("click","button#change",changedetail);
+
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
