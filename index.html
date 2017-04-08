@@ -117,14 +117,17 @@
      <div class="modal-header">
      <h1>搜尋結果</h1>
      <p id="searchresult"></p>
-      </div>
+     </div>
+    </div>
+    <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
 </div>
-<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-toggle="modal" data-target="#answer" value="SEARCH">
-<div class="modal-dialog modal-sm" id="searcherror">
 
-</div>
+ 
+<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-toggle="modal" data-target="#answer" value="SEARCH">
+
  
 <div id="changedata" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -290,12 +293,15 @@ function searchdetail(){
 };
   var result = friendCollection.find(query);
   if(result!=""){
-  console.log(result[0].name);
   console.log("h1");
+  for(var i=0;i<result.length;i++){
+  var searchdata = "Name"+result[i].name+"Sex"+result[i]+"Age"+result[i]+"Others"+result[i]<br> 
+  $("p#searchresult").append("searchdata")
+  }
+  $("div#answer").modal();
   }else{
   alert("搜尋錯誤");
-  $("div#answer").hide();
-  $("div#searcherror").show(); 
+  $("div#answer").modal();
   }
  }
  
