@@ -176,11 +176,11 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
      <div class="modal-header">
-     <h1>搜尋結果</h1>
+     <h1>搜尋結果:</h1>
      <p id="searchresult"></p>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
      </div>
-    </div>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div> 
   </div>
 </div>
 
@@ -302,7 +302,7 @@ function searchdetail(){
   if(result!=""){
   $("p#searchresult").text("");
   for(var i=0;i<result.length;i++){
-  var searchdata = "Name:"+result[i].name+"&nbsp;"+"Sex"+result[i].sex+"&nbsp;"+"Age"+result[i].age+"&nbsp;"+"Others"+result[i].others+"<br>" 
+  var searchdata = "Name:"+"&nbsp;"+result[i].name+"<br>"+"Sex:"+"&nbsp;"+result[i].sex+"<br>"+"Age:"+"&nbsp;"+result[i].age+"<br>"+"Others:"+"&nbsp;"+result[i].others+"<br>" 
   $("p#searchresult").append(searchdata)
   }
   $("div#answer").modal();
