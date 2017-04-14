@@ -44,6 +44,65 @@
 </div>
 </nav>
 
+<div>
+  <div class="select-body">
+       <div class="container">
+        <ul>
+        <div class="form-group">
+          <label for="inputage">你的名字</label>
+          <input id="name" type="text" class="form-control" placeholder="Enter your name">
+          <small id="joke" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="inputage">年齡</label>
+          <input id="age" type="text" class="form-control" placeholder="Enter your age">
+          <small id="joke" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="inputage">性別</label>
+          <input id="sex" type="text" class="form-control" placeholder="boy or girl?">
+          <small id="joke" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="inputother">其他</label>
+          <input id="comment" type="text" class="form-control" placeholder="something else?">
+          <small id="joke" class="form-text text-muted"></small>
+        </div>
+         </ul>
+        <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
+        </div>
+</div>
+</div>
+
+<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-target="#answer" value="SEARCH">
+ 
+<button id="list" onclick="showdata();">跑出資料</button>
+<div class="container">
+<div class="row">    
+ <div id="friendlist">
+ <table id="friendtable" class="table table-hover" style="width: 300px; height: 40px;">
+  <thead>
+     <tr>
+        <td>ID</td>
+        <td>名字</td>
+        <td>性別</td>
+        <td>年紀</td>
+        <td>其他</td>
+        <td>操作</td>
+     </tr>
+  </thead>
+  <tbody>
+  </tbody>
+ </table>
+ </div>
+</div>
+</div>
+ 
+ 
+ 男生<input id="gender" type="checkbox" name="boy" value="boy">
+ 女生<input id="gender" type="checkbox" name="girl" value="girl">
+ <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
+ 
  
 <div id="todolist"> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -124,7 +183,6 @@
 </div>
 
  
-<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-target="#answer" value="SEARCH">
 
  
 <div id="changedata" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -167,64 +225,11 @@
  
  
  
-<button id="list" onclick="showdata();">跑出資料</button>
-<div class="container">
-<div class="row">    
- <div id="friendlist">
- <table id="friendtable" class="table table-hover" style="width: 300px; height: 40px;">
-  <thead>
-     <tr>
-        <td>ID</td>
-        <td>名字</td>
-        <td>性別</td>
-        <td>年紀</td>
-        <td>其他</td>
-        <td>操作</td>
-     </tr>
-  </thead>
-  <tbody>
-  </tbody>
- </table>
- </div>
-</div>
-</div>
- 
- 
- 男生<input id="gender" type="checkbox" name="boy" value="boy">
- 女生<input id="gender" type="checkbox" name="girl" value="girl">
- <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選">
+
  
 
   
-  <div>
-  <div class="select-body">
-       <div class="container">
-        <ul>
-        <div class="form-group">
-          <label for="inputage">你的名字</label>
-          <input id="name" type="text" class="form-control" placeholder="Enter your name">
-          <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-          <label for="inputage">年齡</label>
-          <input id="age" type="text" class="form-control" placeholder="Enter your age">
-          <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-          <label for="inputage">性別</label>
-          <input id="sex" type="text" class="form-control" placeholder="boy or girl?">
-          <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-          <label for="inputother">其他</label>
-          <input id="comment" type="text" class="form-control" placeholder="something else?">
-          <small id="joke" class="form-text text-muted"></small>
-        </div>
-         </ul>
-        <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
-        </div>
-</div>
-</div>
+  
  
 <script>
  
