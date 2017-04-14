@@ -12,8 +12,11 @@ body {
     height: 100%;
 }
 
-.container-fluid {
+#container-headbox {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container-fluid {
     font-family: cursive;
     font-size: 20px;
 }
