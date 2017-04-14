@@ -256,11 +256,17 @@
     others: q3,
     sex: q4
  };
-  friendCollection.insert(newfriend);
+  if(q1!==""){
+   friendCollection.insert(newfriend);
   friendCollection.save();
+  }else{
+    alert("請輸入名字")
+  }
   showdata();
   }  
-  $("#input").val("");
+ 
+ $("#input").val("");
+
  function showdata(){
  $("tbody").text("");
  $("div#friendlist").show();
