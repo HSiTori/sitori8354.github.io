@@ -11,7 +11,6 @@
 <title>interesting class</title>
 </head> 
 <style>
-
 </style>
 <body class="body">
 
@@ -44,10 +43,12 @@
 </div>
 </nav>
 
+<div class="container">
+<div class="row"> 
 
-<input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-target="#answer" value="SEARCH">
+  <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-target="#answer" value="SEARCH">
 
-<div>
+<div class="col-md-4">
   <div class="select-body">
        <div class="container">
         <ul>
@@ -70,17 +71,16 @@
           <label for="inputother">其他</label>
           <input id="comment" type="text" class="form-control" placeholder="something else?">
           <small id="joke" class="form-text text-muted"></small>
-        </div>
-         </ul>
-        <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
-        </div>
-</div>
+       </div>
+       </ul>
+      <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
+      </div>
+  </div>
 </div>
 
-<button id="list" onclick="showdata();">跑出資料</button>
+  <button id="list" onclick="showdata();">跑出資料</button>
 
-<div class="container">
-<div class="row">    
+<div class="col-md-4">
  <div id="friendlist">
  <table id="friendtable" class="table table-hover" style="width: 300px; height: 40px;">
   <thead>
@@ -97,14 +97,14 @@
   </tbody>
  </table>
  </div>
-</div>
-</div>
+ </div>
  
+   男生<input id="gender" type="checkbox" name="boy" value="boy">
+   女生<input id="gender" type="checkbox" name="girl" value="girl">
+   <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
  
- 男生<input id="gender" type="checkbox" name="boy" value="boy">
- 女生<input id="gender" type="checkbox" name="girl" value="girl">
- <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
- 
+ </div>
+ </div>
  
 <div id="todolist"> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
