@@ -398,7 +398,7 @@ for(var i=0;i<$("#gender:checked").length;i++){
   $('#table-job tbody').text("");
   $('div#job-type').show();
   for(var i=0;i<jobCollection.find().length;i++){
-    var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'<td>'+'<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletejobdetail("+i+");' value='刪除'>'+'</td></tr>';
+    var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'<td>'+'<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletejobdetail("+i+");' value='刪除'></td></tr>';
     $("table#table-job tbody").append(data);
     }
  }
