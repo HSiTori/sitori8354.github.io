@@ -383,8 +383,8 @@ if($("searchless").val()!==""){
   $('#table-job tbody').text('');
   $('div#job-type').show();
   for(var i=0;i<jobCollection.find().length;i++)
-    var comment = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'</tr>';
-    $("table#jobtable tbody").append(comment);
+    var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'</tr>';
+    $("table#jobtable tbody").append(data);
  }
  $("table").on("click","button#add-job-btn",addjob);
  </script>
