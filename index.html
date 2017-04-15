@@ -47,9 +47,24 @@
 
 <div class="container">
 <div class="row"> 
+
 <div class="col-md-12">
-  <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" data-target="#answer" value="SEARCH">
+  <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" value="SEARCH">
 </div>
+ 
+<div class="col-md-12">
+   男生<input id="gender" type="checkbox" name="boy" value="boy">
+   女生<input id="gender" type="checkbox" name="girl" value="girl">
+   <input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
+</div>
+ 
+ 
+<div class="col-md-12">
+   <input type="number" id="searchmore" placeholder="大於...">
+   <input type="number" id="searchless" placeholder="小於..."> 
+   <input id='search'><input type="button" class="btn btn-primary" onclick="" value="篩選">
+</div>
+ 
 <div class="col-md-6">
   <div class="select-body" style="width: 500px;">
        <div class="container" style="width: 500px;">
@@ -73,12 +88,21 @@
           <input id="comment" type="text" class="form-control" placeholder="something else?">
           <small id="joke" class="form-text text-muted"></small>
        </div>
+       <select id="job-id">
+        <option value="">請選擇職業</option>
+        <option value="1beda312sd">學生</option> 
+       </select> 
       <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
       <button type="button" class="btn btn-default" id="list" onclick="showdata();">跑出資料</button>
     </div>
    </div>
 </div>
+ 
 
+<h4>ADD JOB<h4>
+<input id='add-job-input'><input id='add-job-btn' type="button" class="btn btn-primary" onclick="addjob();" value="新增">
+
+ 
 <div class="col-md-6">
  <div id="friendlist">
  <table id="friendtable" class="table table-hover" style="width: 500px; height: 40px;">
@@ -98,21 +122,26 @@
  </div>
  </div>
  
- <div class="col-md-12">
-   男生<input id="gender" type="checkbox" name="boy" value="boy">
-   女生<input id="gender" type="checkbox" name="girl" value="girl">
-   <input id='search'><input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
- </div>
+ <div class="col-md-6">
+ <div id="job-type">
+ <input type="button" onclick="showjob();" value='跑出資料'> 
+ <table id="table-job" class="table table-hover" style="width: 500px; height: 40px;">
+  <thead>
+     <tr>
+      <td>id</td>  
+      <td>職業</td>
+     </tr>
+  </thead>
+  <tbody>
+  </tbody>
+ </table>
  </div>
  </div>
  
-<div class="col-md-12">
-<input type="number" id="more" placeholder="大於...">
-<input type="number" id="less" placeholder="小於..."> 
-<input id='search'><input type="button" class="btn btn-primary" onclick="" value="篩選"> 
+ <div>
+  <div>
  </div>
- 
- 
+ </div>
  
 <div id="todolist"> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -233,14 +262,6 @@
   </div>
 </div>
  
- 
- 
-
- 
-
-  
-  
- 
 <script>
  
  var fdb = new ForerunnerDB();
@@ -276,7 +297,7 @@
  $("#input").val("");
 
  function showdata(){
- $("tbody").text("");
+ $("#friendtable tbody").text("");
  $("div#friendlist").show();
  for(var i=0;i<friendCollection.find().length;i++){
   var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].sex+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].others+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='changedefirst();' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
@@ -332,6 +353,40 @@ for(var i=0;i<$("#gender:checked").length;i++){
     checklist.push($("#gender:checked")[i].value)
    }
 }
+ 
+if($("searchless").val()!==""){
+ "$lt"=$("searchless").val();
+ "$gt"=$("searchmore").val();
+ 
+   }else if(){
+}else{
+} 
+ 
+ var jobCollection = db.collection('job');
+ jobCollection.load(); 
+ 
+ function addjob(){
+  var a1 = $('add-job-btn').val();
+   $('input#add-job-btn').val('');
+  var newjob = {
+     type: a1
+  };
+  if(a1!==""){
+    jobCollection.insert(newjob);
+    jobCollection.save();
+  }else{
+    alert("請輸入一個新職業")
+  }
+ }
+ 
+ function showjob(){
+  $('#table-job tbody').text('');
+  $('div#job-type').show();
+  for(var i=0;i<jobCollection.find().length;i++)
+    var comment = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'</tr>';
+    $("table#jobtable tbody").append(comment);
+ }
+ $("table").on("click","button#add-job-btn",addjob);
  </script>
  
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
