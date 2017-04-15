@@ -130,6 +130,7 @@
      <tr>
       <td>id</td>  
       <td>職業</td>
+      <td>操作</td>
      </tr>
   </thead>
   <tbody>
@@ -322,6 +323,21 @@ $("table").on("click","button#enter",quest);
     }
  } 
   
+ function deletejobdetail(i){
+  var r=confirm("確定要刪除嗎?")
+  console.log(i);
+  if (r==true){
+  jobCollection.remove({
+    _id: jobCollection.find()[i]._id
+});
+  jobCollection.save();
+  showjob();
+  }
+  else
+    {
+    alert("好的!不刪除!");
+    }
+ } 
 //result = collection.find({
 
 
@@ -382,7 +398,7 @@ for(var i=0;i<$("#gender:checked").length;i++){
   $('#table-job tbody').text("");
   $('div#job-type').show();
   for(var i=0;i<jobCollection.find().length;i++){
-    var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'</tr>';
+    var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'<td>'+'&nbsp'+'<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletejobdetail("+i+");' value='刪除'>'+'</td>'+'</tr>';
     $("table#table-job tbody").append(data);
     }
  }
