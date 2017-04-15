@@ -365,7 +365,7 @@ for(var i=0;i<$("#gender:checked").length;i++){
  
  function addjob(){
   var p1 = $('#add-job-btn').val();
-   $('input#add-job-btn').val('');
+   $('input#add-job-input').val('');
   var newjob = {
      type: p1
   };
@@ -379,11 +379,11 @@ for(var i=0;i<$("#gender:checked").length;i++){
  }
  
  function showjob(){
-  $('#table-job tbody').text('');
+  $('#table-job tbody').text("");
   $('div#job-type').show();
   for(var i=0;i<jobCollection.find().length;i++)
     var data = '<tr>'+'<td>'+jobCollection.find()[i]._id+'</td>'+'<td>'+jobCollection.find()[i].type+'</td>'+'</tr>';
-    $("table#jobtable tbody").append(data);
+    $("table#table-job tbody").append(data);
  }
  $("table").on("click","button#add-job-btn",addjob);
  </script>
