@@ -364,17 +364,18 @@ for(var i=0;i<$("#gender:checked").length;i++){
  jobCollection.load(); 
  
  function addjob(){
-  var a1 = $('add-job-btn').val();
+  var p1 = $('#add-job-btn').val();
    $('input#add-job-btn').val('');
   var newjob = {
-     type: a1
+     type: p1
   };
-  if(a1!==""){
+  if(p1!==""){
     jobCollection.insert(newjob);
     jobCollection.save();
   }else{
     alert("請輸入一個新職業")
   }
+  showjob();
  }
  
  function showjob(){
