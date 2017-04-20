@@ -10,10 +10,14 @@
  <script src="js/know.js"></script>
 <title>interesting class</title>
 </head> 
-<style>
+
+ <style>
 </style>
-<body class="body">
-<div id="background">
+
+ <body class="body">
+ <div id="background">
+ 
+ //上方列表
  <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div id="container-headbox"> 
@@ -25,21 +29,21 @@
     </button>
   </div>
 <div class="collapse navbar-collapse navbar-collapse-center" id="myNavbar">   
- <ul class="nav navbar-nav">
-   <li><a href="#">Wind</a></li>
-   <li><a href="#">Home</a></li>
-   <li><a href="#">Main</a></li>       
- </ul> 
- <ul class="nav navbar-nav navbar-right">
-   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal(≧▽≦)<span class="caret"></span></a>
- <ul class="dropdown-menu">
-   <li><a href="#" data-toggle="modal" data-target="#myModal">Little Notebook</a></li>
-   <li><a href="#" data-toggle="modal" data-target="#bs-example-modal-lg">Friends</a></li>
-   <li role="separator" class="divider"></li>
-   <li><a href="#">Separated link</a></li>
- </ul>
-  </li>
-</ul>
+  <ul class="nav navbar-nav">
+    <li><a href="#">Wind</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Main</a></li>       
+  </ul> 
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal(≧▽≦)<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#" data-toggle="modal" data-target="#myModal">Little Notebook</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#bs-example-modal-lg">Friends</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+    </li>
+  </ul>
  </div>
 </div> 
 </div>
@@ -48,67 +52,67 @@
 <div class="container">
 <div class="row"> 
 
+ <div class="col-md-12">
+    <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" value="SEARCH">
+ </div>
+ 
 <div class="col-md-12">
-  <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" value="SEARCH">
+    <input type="number" id="searchmore" placeholder="大於...">
+    <input type="number" id="searchless" placeholder="小於..."> 
+    <input id='search'><input type="button" class="btn btn-primary" onclick="" value="篩選">
 </div>
  
 <div class="col-md-12">
-   男生<input id="gender" type="checkbox" name="boy" value="boy">
-   女生<input id="gender" type="checkbox" name="girl" value="girl">
-   <input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
+    男生<input id="gender" type="checkbox" name="boy" value="boy">
+    女生<input id="gender" type="checkbox" name="girl" value="girl">
+    <input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
 </div>
- 
- 
-<div class="col-md-12">
-   <input type="number" id="searchmore" placeholder="大於...">
-   <input type="number" id="searchless" placeholder="小於..."> 
-   <input id='search'><input type="button" class="btn btn-primary" onclick="" value="篩選">
-</div>
- 
+
+
 <div class="col-md-6">
-  <div class="select-body" style="width: 500px;">
-       <div class="container" style="width: 500px;">
-        <div class="form-group">
+<div class="select-body" style="width: 500px;">
+   <div class="container" style="width: 500px;">
+       <div class="form-group">
           <label for="inputage">你的名字</label>
           <input id="name" type="text" class="form-control" placeholder="Enter your name">
           <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
+       </div>
+       <div class="form-group">
           <label for="inputage">年齡</label>
           <input id="age" type="text" class="form-control" placeholder="Enter your age">
           <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
+       </div>
+       <div class="form-group">
           <label for="inputage">性別</label>
           <input id="sex" type="text" class="form-control" placeholder="boy or girl?">
           <small id="joke" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
+       </div>
+       <div class="form-group">
           <label for="inputother">其他</label>
           <input id="comment" type="text" class="form-control" placeholder="something else?">
           <small id="joke" class="form-text text-muted"></small>
        </div>
-       <select id="job-id">
-        <optiondata>
-          <option value="">請選擇職業</option>
-          <option value="1beda312sd">學生</option> 
-        </optiondata>
-       </select>  
+          <select id="job-id">
+          <optiondata>
+            <option value="">請選擇職業</option>
+            <option value="1beda312sd">學生</option> 
+          </optiondata>
+          </select>  
       <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
       <button type="button" class="btn btn-default" id="list" onclick="showdata();">跑出資料</button>
-    </div>
    </div>
 </div>
+</div>
  
-
-<h4>ADD JOB</h4>
-<input id='add-job-input'><input id='add-job-btn' type="button" class="btn btn-primary" onclick="addjob();" value="新增">
-
+<div class="col-md-12">
+   <h4>ADD JOB</h4>
+   <input id='add-job-input'><input id='add-job-btn' type="button" class="btn btn-primary" onclick="addjob();" value="新增">
+</div>
  
 <div class="col-md-6">
- <div id="friendlist">
- <table id="friendtable" class="table table-hover" style="width: 500px; height: 40px;">
-  <thead>
+<div id="friendlist">
+  <table id="friendtable" class="table table-hover" style="width: 500px; height: 40px;">
+    <thead>
      <tr>
         <td>ID</td>
         <td>名字</td>
@@ -117,29 +121,29 @@
         <td>其他</td>
         <td>操作</td>
      </tr>
-  </thead>
-  <tbody>
-  </tbody>
- </table>
- </div>
- </div>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+</div>
  
- <div class="col-md-6">
- <div id="job-type">
- <input type="button" onclick="showjob();" value='跑出資料'> 
- <table id="table-job" class="table table-hover" style="width: 500px; height: 40px;">
-  <thead>
-     <tr>
-      <td>id</td>  
-      <td>職業</td>
-      <td>操作</td>
-     </tr>
-  </thead>
-  <tbody>
-  </tbody>
- </table>
- </div>
- </div>
+<div class="col-md-6">
+<div id="job-type">
+     <input type="button" onclick="showjob();" value='跑出資料'> 
+   <table id="table-job" class="table table-hover" style="width: 500px; height: 40px;">
+     <thead>
+       <tr>
+        <td>id</td>  
+        <td>職業</td>
+        <td>操作</td>
+       </tr>
+     </thead>
+     <tbody>
+     </tbody>
+   </table>
+</div>
+</div>
  
 
  
@@ -170,55 +174,18 @@
   </div>
 </div> 
 </div>
- 
-<div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>交個朋友吧~</h3>
-        <h6>來嘛來嘛!互相交個朋友吧///這裡有些小小的問題想要問你~~~要好好回答喲////</h6> 
-      </div>
-      <div class="modal-body">
-       <div class="container">
-        <div class="row">
-        <ul>
-        <li>
-        <h4>你 是 誰 ?</h4>
-        <h6>來 來，告訴我你的名字，不然不知道怎麼稱呼你喔OwO</h6>
-        <div class="col-md-2"><input type="text" class="form-control" id="aaaname"/></div>
-        </li>
-        <li>
-        <h4>敢 問 芳 齡 ??</h4>
-        <h6>(小聲)偷偷告訴我你的年紀嘛~~</h6>
-        <div class="col-md-2"><input type="text" class="form-control" id="aaaage"/></div>
-        </li>
-        <br>
-        <li>
-         <h4>還有甚麼話想跟我說的??說越多我越高興喔喔喔www</h4>
-         <div class="col-md-4"><textarea type="text" class="form-control" rows="2" id="aaacomment"></textarea></div>
-        </li>
-         </ul>  
-        </div>
-        </div>
-     </div>
-         <div class="modal-footer">
-         <button type="button" class="btn btn-default" data-dismiss="modal" id="enter" onclick="quest();">Enter</button>
-         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> 
+
 
 <div id="answer" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
      <div class="modal-header">
-     <h1>搜尋結果:</h1>
-     <p id="searchresult"></p>
-     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+       <h1>搜尋結果:</h1>
+       <p id="searchresult"></p>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
      </div>
-    </div> 
-  </div>
+   </div> 
+</div>
 </div>
 
  
