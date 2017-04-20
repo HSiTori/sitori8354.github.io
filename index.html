@@ -17,7 +17,7 @@
  <body class="body">
  <div id="background">
  
- //上方列表
+ <!--上方列表-->
  <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div id="container-headbox"> 
@@ -52,23 +52,26 @@
 <div class="container">
 <div class="row"> 
 
+ <!--搜尋-->
  <div class="col-md-12">
     <input id='search'><input type="button" class="btn btn-primary" onclick="searchdetail();" value="SEARCH">
  </div>
  
+<!--搜尋(範圍)--> 
 <div class="col-md-12">
     <input type="number" id="searchmore" placeholder="大於...">
     <input type="number" id="searchless" placeholder="小於..."> 
     <input id='search'><input type="button" class="btn btn-primary" onclick="" value="篩選">
 </div>
- 
+
+<!--搜尋(特定標籤)--> 
 <div class="col-md-12">
     男生<input id="gender" type="checkbox" name="boy" value="boy">
     女生<input id="gender" type="checkbox" name="girl" value="girl">
     <input type="button" class="btn btn-primary" onclick="select();" value="篩選"> 
 </div>
 
-
+<!--輸入名單-->
 <div class="col-md-6">
 <div class="select-body" style="width: 500px;">
    <div class="container" style="width: 500px;">
@@ -104,11 +107,13 @@
 </div>
 </div>
  
+<!--新增下拉列表--> 
 <div class="col-md-12">
    <h4>ADD JOB</h4>
    <input id='add-job-input'><input id='add-job-btn' type="button" class="btn btn-primary" onclick="addjob();" value="新增">
 </div>
  
+<!--表格一--> 
 <div class="col-md-6">
 <div id="friendlist">
   <table id="friendtable" class="table table-hover" style="width: 500px; height: 40px;">
@@ -127,7 +132,8 @@
   </table>
 </div>
 </div>
- 
+
+<!--表格二--> 
 <div class="col-md-6">
 <div id="job-type">
      <input type="button" onclick="showjob();" value='跑出資料'> 
@@ -146,7 +152,7 @@
 </div>
  
 
- 
+<!--todolist Modal--> 
 <div id="todolist"> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -175,7 +181,7 @@
 </div> 
 </div>
 
-
+<!--搜尋結果 Modal-->
 <div id="answer" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog modal-lg" role="document">
    <div class="modal-content">
@@ -188,9 +194,7 @@
 </div>
 </div>
 
- 
-
- 
+<!--修改資料 Modal--> 
 <div id="changedata" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
