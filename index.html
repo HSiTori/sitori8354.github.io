@@ -233,17 +233,32 @@
 </div>
 </div>
 
+<!--提醒視窗-->  
+<div id="alert" class="modal fade bs-example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4>小提醒~~~</h4> 
+       <p id="alertresult"></p>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+     </div>
+   </div> 
+</div>
+</div> 
+  
+  
+  
+  
 <script>
  
  //創建資料庫
  var fdb = new ForerunnerDB();
+ var db = fdb.db("資料庫");
  
- var db = fdb.db("friend");
  var friendCollection = db.collection("friend");
  friendCollection.load(); 
  $("div#friendlist").hide();
  
- var db = fdb.db("job")
  var jobCollection = db.collection("job");
  jobCollection.load(); 
  $("div#job-type").hide();
@@ -271,7 +286,9 @@
       friendCollection.insert(newfriend);
       friendCollection.save();
      }else{
-      alert("請輸入名字")
+      $("p#alertresult").text("");
+      $("p#alertresult").append("Please Enter Your Name.");
+      $("#alert").modal();
      }
       showfriend();
  };  
@@ -369,12 +386,34 @@ for(var i=0;i<$("#gender:checked").length;i++){
    }
 }
  
-//if($("searchless").val()!==""){
-// "$lt"=$("searchless").val();
-// "$gt"=$("searchmore").val();
-// 
-//   }else if(){
-//}else{
+function range(){  
+
+  if( $("searchless").val()!== ""){
+    var rangeresult = friendCollection.find({  
+        type: {
+        "$gt" : $("#searchmore").val() /1;
+        "$lt" : $("#searchless").val() /1;
+        }       
+    });
+   $("p#searchresult").text("");
+   for(var i=0;i<rangeresult.length;i++){
+      $("p#searchresult").append("Name:"+"&nbsp;"+result[i].name+"<br>"+"Sex:"+"&nbsp;"+result[i].sex+"<br>"+"Age:"+"&nbsp;"+result[i].age+"<br>"+"Others:"+"&nbsp;"+result[i].others+"<br>")
+   }
+   $("#answer").modal();
+   }else if( $("searchless").val()== "" && $("searchmore").val()!== ""){
+    var rangeresult = friendCollection.find({  
+        type: {
+        "$gt" : $("#searchmore").val() /1;
+        }       
+    });
+    $("p#searchresult").text("");
+    for(var i=0;i<rangeresult.length;i++){
+      $("p#searchresult").append("Name:"+"&nbsp;"+result[i].name+"<br>"+"Sex:"+"&nbsp;"+result[i].sex+"<br>"+"Age:"+"&nbsp;"+result[i].age+"<br>"+"Others:"+"&nbsp;"+result[i].others+"<br>")
+   }
+    $("#answer").modal(); 
+   }else{
+    alert("搜尋錯誤");
+    
 //} 
  
  
