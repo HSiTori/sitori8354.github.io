@@ -391,8 +391,8 @@ function range(){
   if( $("searchless").val()!== ""){
     var rangeresult = friendCollection.find({  
         age: {
-        "$gt" : $("#searchmore").val() /1;
-        "$lt" : $("#searchless").val() /1;
+        "$gt" : $("#searchmore").val()/1
+        "$lt" : $("#searchless").val()/1
         }       
     });
    $("p#searchresult").text("");
@@ -403,7 +403,7 @@ function range(){
    }else if( $("searchless").val()== "" && $("searchmore").val()!== ""){
     var rangeresult = friendCollection.find({  
         age: {
-        "$gt" : $("#searchmore").val() /1;
+        "$gt" : $("#searchmore").val()/1
         }       
     });
     $("p#searchresult").text("");
