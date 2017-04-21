@@ -11,9 +11,6 @@
 <title>interesting class</title>
 </head> 
 
- <style>
-</style>
-
  <body class="body">
  <div id="background">
  
@@ -151,6 +148,8 @@
 </div>
 </div>
  
+</div>
+</div> 
 
 <!--todolist Modal--> 
 <div id="todolist"> 
@@ -161,20 +160,20 @@
      <div class="modal-header-todo">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
          <h4 class="modal-title" id="myModalLabel">Notebook(⁎˃ᆺ˂)</h4>
-      </div>
-      <div class="modal-body-todo">
-       <div class="container">
-          <input id="input" class="js-task-checkbox" type="text"><button id="add-button" class="btn btn-info btn-sm" onclick="addTask();">加入</button>
-       <div class="clear-float">
-         <ul id="task-list" style="list-style: none">
-          <li class="delete"></li> 
-         </ul>
-       </div>
-      </div>
      </div>
-      <div class="modal-footer-todo">
+     <div class="modal-body-todo">
+     <div class="container">
+          <input id="input" class="js-task-checkbox" type="text"><button id="add-button" class="btn btn-info btn-sm" onclick="addTask();">加入</button>
+     <div class="clear-float">
+         <ul id="task-list" style="list-style: none">
+           <li class="delete"></li> 
+         </ul>
+     </div>
+     </div>
+     </div>
+     <div class="modal-footer-todo">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+     </div>
     </div>
     </div>
   </div>
@@ -233,7 +232,7 @@
   </div>
 </div>
 </div>
- 
+
 <script>
  
  //創建資料庫
@@ -382,8 +381,10 @@ for(var i=0;i<$("#gender:checked").length;i++){
  
  
  </script>
+ 
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
- </body>
+ 
+ </body> 
 </html> 
   
