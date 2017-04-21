@@ -397,7 +397,8 @@ function range(){
     });
    $("p#searchresult").text("");
    for(var i=0;i<rangeresult.length;i++){
-      $("p#searchresult").append("NO."+i+1+"Name:"+"&nbsp;"+rangeresult[i].name+"<br>"+"Sex:"+"&nbsp;"+rangeresult[i].sex+"<br>"+"Age:"+"&nbsp;"+rangeresult[i].age+"<br>"+"Others:"+"&nbsp;"+rangeresult[i].others+"<p>")
+      var num = i/1+1
+      $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+rangeresult[i].name+"<br>"+"Sex:"+"&nbsp;"+rangeresult[i].sex+"<br>"+"Age:"+"&nbsp;"+rangeresult[i].age+"<br>"+"Others:"+"&nbsp;"+rangeresult[i].others+"<p>")
    }
    $("#answer").modal();
    }else if( $("#searchless").val()== "" && $("#searchmore").val()!== ""){
@@ -408,7 +409,8 @@ function range(){
     });
     $("p#searchresult").text("");
     for(var i=0;i<rangeresult.length;i++){
-      $("p#searchresult").append("Name:"+"&nbsp;"+rangeresult[i].name+"<br>"+"Sex:"+"&nbsp;"+rangeresult[i].sex+"<br>"+"Age:"+"&nbsp;"+rangeresult[i].age+"<br>"+"Others:"+"&nbsp;"+rangeresult[i].others+"<p>")
+      var num = i/1+1
+      $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+rangeresult[i].name+"<br>"+"Sex:"+"&nbsp;"+rangeresult[i].sex+"<br>"+"Age:"+"&nbsp;"+rangeresult[i].age+"<br>"+"Others:"+"&nbsp;"+rangeresult[i].others+"<p>")
    }
     $("#answer").modal(); 
    }else{
