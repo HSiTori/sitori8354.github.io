@@ -204,19 +204,24 @@
      <div class="row">
       <form>
       <div class="form-group">
-        <label for="inputname">想要更改的名字?</label>
-        <input class="form-control" id="inputname" placeholder="Enter your name">
-        <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        <label for="editname">想要更改的名字?</label>
+        <input class="form-control" id="editname" placeholder="Enter your name">
+        <small id="joke" class="form-text text-muted">呵</small>
       </div>
       <div class="form-group">
-        <label for="inputage">想要更改的年齡?</label>
-        <input class="form-control" id="inputage" placeholder="Enter your age">
-        <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        <label for="editage">想要更改的年齡?</label>
+        <input class="form-control" id="editage" placeholder="Enter your age">
+        <small id="joke" class="form-text text-muted">呵</small>
       </div>
       <div class="form-group">
-        <label for="inputother">其他?</label>
-        <input class="form-control" id="inputother" placeholder="others">
-        <small id="joke" class="form-text text-muted">呵呵呵呵呵呵</small>
+        <label for="editsex">想要更改的性別?</label>
+        <input class="form-control" id="editsex" placeholder="Enter your gender">
+        <small id="joke" class="form-text text-muted">呵</small>
+      </div> 
+      <div class="form-group">
+        <label for="editother">其他?</label>
+        <input class="form-control" id="editother" placeholder="others">
+        <small id="joke" class="form-text text-muted">呵</small>
       </div>
       </form>
      </div>
@@ -359,6 +364,21 @@
   }
  };  
 
+ //編輯資料(表一)
+ //function editdata(){
+   //var newdata = {
+     //name: $("#editname").val(),
+     //age: $("#editage").val(),
+     //sex: $("#editsex").val(),
+     //others: $("#editother").val()  
+   //}
+   //friendCollection.updateById(editDataId,newData);
+   //friendCollection.save();
+ //}
+ 
+ 
+ 
+ 
 //搜尋(單字:名字)
 function searchdetail(){
   var query = {
