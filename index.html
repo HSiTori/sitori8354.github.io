@@ -400,11 +400,23 @@ function searchdetail(){
  
 //搜尋(勾選選項) 
 function select(){ 
-var checklist = [ ]
-for(var i=0;i<$("#gender:checked").length;i++){
+  var checklist = [ ]
+  for(var i=0;i<$("#gender:checked").length;i++){
     checklist.push($("#gender:checked")[i].value)
+  }
+  var selectdata = friendCollection.find({
+    sex: {
+      $in: checklist 
+    }
+  });
+  $("p#searchresult").text("");
+  for(var i=0;i<selectdata.length;i++){
+      var num = i/1+1
+      $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+selectdata[i].name+"&nbsp;"+"Sex:"+"&nbsp;"+selectdata[i].sex+"&nbsp;"+"Age:"+"&nbsp;"+selectdata[i].age+"&nbsp;"+"Others:"+"&nbsp;"+selectdata[i].others+"<p>")
    }
+  $("#answer").modal();
 }
+ 
 
 //搜尋(範圍) 
 function range(){  
