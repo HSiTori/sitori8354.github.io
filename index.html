@@ -111,6 +111,7 @@
 <div class="col-md-6">
    <h4>ADD JOB</h4>
    <input id='add-job-input'><input id='add-job-btn' type="button" class="btn btn-primary" onclick="addjob();" value="新增">
+   <input type="button" onclick="showjob();" value='跑出資料'>
 </div>
  
 <!--表格一--> 
@@ -135,8 +136,7 @@
 
 <!--表格二--> 
 <div class="col-md-6">
-<div id="job-type">
-     <input type="button" onclick="showjob();" value='跑出資料'> 
+<div id="job-type"> 
    <table id="table-job" class="table table-hover" style="width: 500px; height: 40px;">
      <thead>
        <tr>
