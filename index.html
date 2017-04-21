@@ -390,7 +390,7 @@ function range(){
 
   if( $("searchless").val()!== ""){
     var rangeresult = friendCollection.find({  
-        type: {
+        age: {
         "$gt" : $("#searchmore").val() /1;
         "$lt" : $("#searchless").val() /1;
         }       
@@ -402,7 +402,7 @@ function range(){
    $("#answer").modal();
    }else if( $("searchless").val()== "" && $("searchmore").val()!== ""){
     var rangeresult = friendCollection.find({  
-        type: {
+        age: {
         "$gt" : $("#searchmore").val() /1;
         }       
     });
