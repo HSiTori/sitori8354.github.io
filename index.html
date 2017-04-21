@@ -101,8 +101,8 @@
             <option value="1beda312sd">學生</option> 
           </optiondata>
           </select>  
-      <button type="button" class="btn btn-default" id="enter" onclick="quest();">Enter</button>
-      <button type="button" class="btn btn-default" id="list" onclick="showdata();">跑出資料</button>
+      <button type="button" class="btn btn-default" id="enter" onclick="addfriend();">Enter</button>
+      <button type="button" class="btn btn-default" id="list" onclick="showfriend();">跑出資料</button>
    </div>
 </div>
 </div>
@@ -236,13 +236,22 @@
  
 <script>
  
+ //創建資料庫
  var fdb = new ForerunnerDB();
+ 
  var db = fdb.db("friend");
- var friendCollection = db.collection('friend');
+ var friendCollection = db.collection("friend");
  friendCollection.load(); 
  $("div#friendlist").hide();
-
-  function quest(){
+ 
+ var db = fdb.db("job")
+ var jobCollection = db.collection("job");
+ jobCollection.load(); 
+ $("div#job-type").hide();
+ 
+//加入資料(表一)
+ function addfriend(){
+    
     var  q1 = $("input#name").val();
     $("input#name").val("");
     var  q2 = $("input#age").val();
@@ -251,89 +260,109 @@
     $("input#comment").val("");
     var  q4 = $("input#sex").val();
     $("input#sex").val("");
-   var newfriend = {
-    name: q1,
-    age: q2,
-    others: q3,
-    sex: q4
- };
-  if(q1!==""){
-   friendCollection.insert(newfriend);
-  friendCollection.save();
-  }else{
-    alert("請輸入名字")
-  }
-  showdata();
-  }  
- 
+   
+    var newfriend = {
+      name: q1,
+      age: q2,
+      others: q3,
+      sex: q4
+    };
+  
+    if(q1!==""){
+      friendCollection.insert(newfriend);
+      friendCollection.save();
+     }else{
+      alert("請輸入名字")
+     }
+      showfriend();
+ };  
+  
  $("#input").val("");
 
- function showdata(){
- $("#friendtable tbody").text("");
- $("div#friendlist").show();
- for(var i=0;i<friendCollection.find().length;i++){
-  var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].sex+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].others+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='changedefirst();' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletedetail("+i+");' value='刪除'></td></tr>";
-  $("table#friendtable tbody").append(comment);
+ function showfriend(){
+   $("#friendtable tbody").text("");
+   $("div#friendlist").show();
+   for(var i=0;i<friendCollection.find().length;i++){
+       var comment = "<tr>"+"<td>"+friendCollection.find()[i]._id+"</td>"+"<td>"+friendCollection.find()[i].name+"</td>"+"<td>"+friendCollection.find()[i].sex+"</td>"+"<td>"+friendCollection.find()[i].age+"</td>"+"<td>"+friendCollection.find()[i].others+"</td>"+"<td><input type='button' class='btn btn-info' id='changefirst' data-id='"+friendCollection.find()[i]._id+"' data-toggle='modal' data-target='#changedata' onclick='changedefirst();' value='修改'>&nbsp<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletefrienddetail("+i+");' value='刪除'></td></tr>";
+       $("table#friendtable tbody").append(comment);
+   };
  };
- };
-$("table").on("click","button#enter",quest);
-  
 
- 
- function deletedetail(i){
-  var r=confirm("確定要刪除嗎?")
-  console.log(i);
-  if (r==true){
-  friendCollection.remove({
-    _id: friendCollection.find()[i]._id
-});
-  friendCollection.save();
-  showdata();
-  }
-  else
-    {
-    alert("好的!不刪除!");
+ $("table").on("click","button#enter",addfriend);
+
+ //刪除資料(表一)
+ function deletefrienddetail(i){
+    var r=confirm("確定要刪除嗎?")
+    //console.log(i);
+    if (r==true){
+       friendCollection.remove({ _id: friendCollection.find()[i]._id });
+       friendCollection.save();
+       showfriend();
+    }else{
+       alert("好的!不刪除!");
     }
  } 
-  
+
+//加入資料(表二)
+ function addjob(){
+    var p1 = $("#add-job-input").val();
+    $("input#add-job-input").val("");
+    var newjob = {
+       type: p1
+    };
+    if(p1!==""){
+      jobCollection.insert(newjob);
+      jobCollection.save();
+    }else{
+      alert("請輸入一個新職業")
+    }
+    showjob();
+ };
+ 
+ function showjob(){
+   $("#table-job tbody").text("");
+   $("div#job-type").show();
+   for(var i=0;i<jobCollection.find().length;i++){
+      var data = "<tr>"+"<td>"+jobCollection.find()[i]._id+"</td>"+"<td>"+jobCollection.find()[i].type+"</td>"+"<td>"+"<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletejobdetail("+i+");' value='刪除'></td></tr>";
+      $("table#table-job tbody").append(data);
+   }
+ }
+ 
+ $("table").on("click","button#add-job-btn",addjob);  
+ 
+ //刪除資料(表二)
  function deletejobdetail(i){
   var r=confirm("確定要刪除嗎?")
   console.log(i);
   if (r==true){
-  jobCollection.remove({
-    _id: jobCollection.find()[i]._id
-});
-  jobCollection.save();
-  showjob();
-  }
-  else
-    {
+    jobCollection.remove({ _id: jobCollection.find()[i]._id });
+    jobCollection.save();
+    showjob();
+  }else{
     alert("好的!不刪除!");
-    }
- } 
-//result = collection.find({
+  }
+ };  
 
-
-//})
-
+//搜尋(單字:名字)
 function searchdetail(){
   var query = {
     name: $("input#search").val()
-};
+  };
   var result = friendCollection.find(query);
   if(result!=""){
-  $("p#searchresult").text("");
-  for(var i=0;i<result.length;i++){
-  var searchdata = "Name:"+"&nbsp;"+result[i].name+"<br>"+"Sex:"+"&nbsp;"+result[i].sex+"<br>"+"Age:"+"&nbsp;"+result[i].age+"<br>"+"Others:"+"&nbsp;"+result[i].others+"<br>" 
-  $("p#searchresult").append(searchdata)
-  }
-  $("div#answer").modal();
-  }else{
-  alert("搜尋錯誤");
-  }
- $("input#search").val("");
+    $("p#searchresult").text("");
+    for(var i=0;i<result.length;i++){
+       var searchdata = "Name:"+"&nbsp;"+result[i].name+"<br>"+"Sex:"+"&nbsp;"+result[i].sex+"<br>"+"Age:"+"&nbsp;"+result[i].age+"<br>"+"Others:"+"&nbsp;"+result[i].others+"<br>" 
+       $("p#searchresult").append(searchdata)
+    }
+    $("div#answer").modal();
+    }else{
+      alert("搜尋錯誤");
+    }
+    $("input#search").val("");
  }
  
+//搜尋(勾選選項) 
 function select(){ 
 var checklist = [ ]
 for(var i=0;i<$("#gender:checked").length;i++){
@@ -349,33 +378,9 @@ for(var i=0;i<$("#gender:checked").length;i++){
 //}else{
 //} 
  
- var jobCollection = db.collection('job');
- jobCollection.load(); 
  
- function addjob(){
-  var p1 = $('#add-job-input').val();
-   $('input#add-job-input').val('');
-  var newjob = {
-     type: p1
-  };
-  if(p1!==""){
-    jobCollection.insert(newjob);
-    jobCollection.save();
-  }else{
-    alert("請輸入一個新職業")
-  }
-  showjob();
- }
  
- function showjob(){
-  $('#table-job tbody').text("");
-  $('div#job-type').show();
-  for(var i=0;i<jobCollection.find().length;i++){
-    var data = "<tr>"+"<td>"+jobCollection.find()[i]._id+"</td>"+"<td>"+jobCollection.find()[i].type+"</td>"+"<td>"+"<input type='button' class='btn btn-danger btn-xs"+i+"' onclick='deletejobdetail("+i+");' value='刪除'></td></tr>";
-    $("table#table-job tbody").append(data);
-    }
- }
- $("table").on("click","button#add-job-btn",addjob);
+ 
  </script>
  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
