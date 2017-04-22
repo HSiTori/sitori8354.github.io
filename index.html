@@ -365,10 +365,14 @@
 
  //編輯資料(表一)
  function changedata(){
-   var editDataId = {
-       _id: $("button#changefirst").val()
+   var editDataId = $(this).data("id");
+   var changedata = {
+     _id: editDataId
    }
-   console.log(editDataId);
+   $("input#editname").attr("placeholder",friendCollection.find(changedata)[0].name)
+   $("input#editsex").attr("placeholder",friendCollection.find(changedata)[0].sex)
+   $("input#editage").attr("placeholder",friendCollection.find(changedata)[0].age)
+   $("input#editother").attr("placeholder",friendCollection.find(changedata)[0].others)
   }
  
  function editdata(){
