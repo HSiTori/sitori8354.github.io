@@ -399,20 +399,20 @@ function searchdetail(){
  }
  
 //搜尋(勾選選項) 
-function select(){ 
+function selectsearch(){ 
   var checklist = [ ]
   for(var i=0;i<$("#gender:checked").length;i++){
     checklist.push($("#gender:checked")[i].value)
   }
-  var selectdata = friendCollection.find({
+  var result = friendCollection.find({
     sex: {
       $in: checklist 
     }
   });
   $("p#searchresult").text("");
-  for(var i=0;i<selectdata.length;i++){
+  for(var i=0;i<result.length;i++){
       var num = i/1+1
-      $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+selectdata[i].name+"&nbsp;"+"Sex:"+"&nbsp;"+selectdata[i].sex+"&nbsp;"+"Age:"+"&nbsp;"+selectdata[i].age+"&nbsp;"+"Others:"+"&nbsp;"+selectdata[i].others+"<p>")
+      $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+result[i].name+"&nbsp;"+"Sex:"+"&nbsp;"+result[i].sex+"&nbsp;"+"Age:"+"&nbsp;"+result[i].age+"&nbsp;"+"Others:"+"&nbsp;"+result[i].others+"<p>")
    }
   $("#answer").modal();
 }
