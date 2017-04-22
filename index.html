@@ -364,16 +364,16 @@
  };  
 
  //編輯資料(表一)
- //function editdata(){
-   //var newdata = {
-     //name: $("#editname").val(),
-     //age: $("#editage").val(),
-     //sex: $("#editsex").val(),
-     //others: $("#editother").val()  
-   //}
-   //friendCollection.updateById(editDataId,newData);
-   //friendCollection.save();
- //}
+ function editdata(){
+   var newdata = {
+     name: $("#editname").val(),
+     age: $("#editage").val(),
+     sex: $("#editsex").val(),
+     others: $("#editother").val()  
+   }
+   friendCollection.updateById(editDataId,newData);
+   friendCollection.save();
+ }
  
  
  
@@ -398,8 +398,8 @@ function searchdetail(){
  }
  
 //搜尋(勾選選項) 
-function selectsearch(){  
   var checklist = [ ]
+function selectsearch(){  
   for(var i=0;i<$("#gender:checked").length;i++){
     checklist.push($("#gender:checked")[i].value)
   }
