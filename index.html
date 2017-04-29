@@ -412,6 +412,7 @@ function searchdetail(){
 //搜尋(勾選選項) 
   var checklist = [ ]
 function selectsearch(){  
+ if("#gender:checked"!=0){
   for(var i=0;i<$("#gender:checked").length;i++){
     checklist.push($("#gender:checked")[i].value)
   }
@@ -426,6 +427,9 @@ function selectsearch(){
       $("p#searchresult").append("NO."+num+"<br>"+"Name:"+"&nbsp;"+result[i].name+"&nbsp;"+"Sex:"+"&nbsp;"+result[i].sex+"&nbsp;"+"Age:"+"&nbsp;"+result[i].age+"&nbsp;"+"Others:"+"&nbsp;"+result[i].others+"<p>")
    }
   $("#answer").modal();
+}else{
+  alert("搜尋錯誤");
+};
 }
   
 
